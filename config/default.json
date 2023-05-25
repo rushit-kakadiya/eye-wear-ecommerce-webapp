@@ -1,0 +1,170 @@
+{
+  "app": {
+    "name": "Eyewear-dev",
+    "host": "http://localhost",
+    "port": 3008,
+    "debug": true,
+    "logLevel": "debug",
+    "jwtAlgo": "HS512",
+    "jwtKey": "node-project",
+    "apiKey": ""
+  },
+  "log": {
+    "warnLogFile": "/../../logs/warn.log",
+    "errorLogFile": "/../../logs/error.log",
+    "debugLogFile": "/../../logs/debug.log",
+    "infoLogFile": "/../../logs/info.log"
+  },
+  "logger": {
+    "name": "eyewear-dev-api",
+    "level": "info",
+    "output": "json"
+  },
+  "turboly": {
+    "baseUrl": "",
+    "authEmail": "",
+    "authToken": ""
+  },
+  "turbolyEcomOrder": {
+    "registerID": 0,
+    "paymentTypeName": "APPLICATION",
+    "fulfillmentType": 1,
+    "storeID": 0
+  },
+  "paypal": {
+    "mode": "sandbox",
+    "clientID": "",
+    "clientSecret": "",
+    "return_url": "",
+    "cancel_url": ""
+  },
+  "databases": {
+    "postgres": {
+      "hostName": "db.weeknds.com",
+      "dbName": "postgres",
+      "userName": "eyewear",
+      "passoword": "",
+      "port": "5432"
+    },
+    "elastic": {
+      "host": "",
+      "logHost": ""
+    }
+  },
+  "smtp": {
+    "smtpUser": "",
+    "smtpPass": "",
+    "smtpPort": 587,
+    "smtpServer": "smtp.sendgrid.net",
+    "mailFrom": "Eyewear <help@eyewear.id>"
+  },
+  "awssmtp": {
+    "smtpUser": "",
+    "smtpPass": "",
+    "smtpPort": 465,
+    "smtpServer": "",
+    "mailFrom": "Eyewear <help@eyewear.com>",
+    "mailFromHTO": "Eyewear <hto@eyewear.com>"
+  },
+  "constants": {
+    "keepAlive": false,
+    "elasticRequestTimeout": 100000,
+    "requestTimeoutSequelize": 3000000,
+    "maxConnectionSequelize": 10,
+    "sequelizeLog": true,
+    "evict": 1000,
+    "seqAcquire": 4000,
+    "apiVersion": "7.7"
+  },
+  "xendit": {
+    "baseUrl": "",
+    "publicKey": "",
+    "secretKey": "",
+    "cardless_redirect_url": "",
+    "cardless_callback_url": "",
+    "callbackToken": ""
+  },
+  "ninjaExpress": {
+    "url": "",
+    "client_id": "",
+    "client_secret": "",
+    "storeAddress": {
+      "name": "",
+      "phone": "",
+      "email": "",
+      "address": "",
+      "city": "",
+      "store_region": "",
+      "address_type": "",
+      "country": "",
+      "zipcode": ""
+    }
+  },
+  "sicepatExpress": {
+    "url": "",
+    "pickup_url": "",
+    "api_key": "",
+    "auth_key": "",
+    "storeAddress": {
+      "name": "",
+      "phone": "",
+      "email": "",
+      "address": "",
+      "city": "",
+      "store_region": "",
+      "address_type": "",
+      "country": "",
+      "zipcode": ""
+    }
+  },
+  "aws": {
+    "apiVersion": "",
+    "accessKeyId": "",
+    "secretAccessKey": "",
+    "region": "",
+    "bucket": "",
+    "folder": "",
+    "s3URL": "",
+    "snsAccessKey": "",
+    "snsSecretAccessKey": ""
+  },
+  "s3URL": "",
+  "fcm": {
+    "serverKey": {
+      "type": "",
+      "project_id": "",
+      "private_key_id": "",
+      "private_key": "",
+      "client_email": "",
+      "client_id": "",
+      "auth_uri": "",
+      "token_uri": "",
+      "auth_provider_x509_cert_url": "",
+      "client_x509_cert_url": ""
+    },
+    "appTitle": ""
+  },
+  "oneSignal": {
+    "baseUrl": "",
+    "appId": "",
+    "apiKey": "",
+    "appTitle": ""
+  },
+  "whatsapp": {
+    "authUrl": "",
+    "baseUrl": "",
+    "username": "",
+    "password": "",
+    "client_id": "",
+    "client_secret": ""
+  },
+  "citcall": {
+    "baseUrl": "",
+    "key": "",
+    "gateway": 3,
+    "retry": 3,
+    "indoGateway": 2,
+    "indoRetry": 2
+  },
+  "slack_backend_error_channel_url": ""
+}

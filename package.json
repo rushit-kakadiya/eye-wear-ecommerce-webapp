@@ -1,0 +1,101 @@
+{
+  "name": "eyewear-api",
+  "version": "1.0.0",
+  "description": "eyewear backend api",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "dev": "node src/server.js",
+    "cron-start": "nodemon src/init-crons.js",
+    "test": "jest",
+    "re-install": "rm -rf node_modules && npm install",
+    "prettier": "prettier --write \"**/*.json\" \"**/*.js\"",
+    "lint": "eslint . --ext .js"
+  },
+  "author": "Rushit Kakadiya",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "@hapi/joi-date": "^2.0.1",
+    "array.prototype.flatmap": "^1.2.3",
+    "aws-sdk": "^2.814.0",
+    "axios": "^0.19.2",
+    "bunyan": "^1.8.14",
+    "bunyan-elasticsearch": "^1.0.1",
+    "bunyan-format": "^0.2.1",
+    "cluster": "^0.7.7",
+    "compression": "^1.7.4",
+    "config": "^3.3.1",
+    "connect-multiparty": "^2.2.0",
+    "cors": "^2.8.5",
+    "cron": "^1.8.2",
+    "crypto-js": "^4.0.0",
+    "ejs": "^3.1.5",
+    "elasticsearch": "^16.7.1",
+    "email-templates": "^2.7.1",
+    "express": "^4.17.1",
+    "express-bunyan-logger": "^1.3.3",
+    "express-joi-validation": "^4.0.3",
+    "express-jwt": "^5.3.3",
+    "fcm-notification": "^2.0.0",
+    "fs": "0.0.1-security",
+    "helmet": "^3.22.0",
+    "html-pdf": "^2.2.0",
+    "http-aws-es": "^6.0.0",
+    "ical-generator": "^1.15.1",
+    "image-type": "^4.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "md5": "^2.2.1",
+    "messagebird": "^3.5.0",
+    "moment": "^2.26.0",
+    "moment-timezone": "^0.5.32",
+    "morgan": "^1.10.0",
+    "node-cache": "^5.1.2",
+    "node-cron": "^2.0.3",
+    "node-ses": "^3.0.3",
+    "node-xlsx": "^0.21.0",
+    "nodemailer": "^6.4.13",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "nodemon": "^2.0.4",
+    "path": "^0.12.7",
+    "paypal-rest-sdk": "^1.8.1",
+    "pg": "^8.2.1",
+    "read-chunk": "^3.2.0",
+    "request": "^2.88.2",
+    "sequelize": "^5.21.12",
+    "slugify": "^1.4.5",
+    "uuid": "^8.1.0",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.4.2",
+    "winston-elasticsearch": "^0.7.12",
+    "xendit-node": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.3",
+    "husky": "^4.2.5",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.2.7",
+    "prettier": "^2.0.5",
+    "supertest": "^4.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
+  },
+  "jest": {
+    "testTimeout": 50000,
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+<%- include('partials/header') %>
+  <div class="header-detail">
+    <div id="logo">
+      <div>
+        <image src="https://eyewear-user.s3-ap-southeast-1.amazonaws.com/email-images/logo.png" />
+      </div>
+    </div>
+    <div id="order">
+      <div class="order-details"><span>Order ID <%= order_no %></span></div>
+    </div>
+    <div style="clear:both"></div>
+  </div>
+  <header class="clearfix">
+    <div id="project">
+      <div class="mb-10"><span class="heading">Customer Details</span></div>
+      <div><span><%= name %></span></div>
+      <div><span><%= number %></span></div>
+    </div>
+    <div id="company" class="clearfix">
+      <div class="mb-10"><span class="heading">Purchase Details</span></div>
+      <div><span><%= date %></span></div>
+    </div>
+  </header>
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th class="service"></th>
+          <th>SPH</th>
+          <th>CYL</th>
+          <th>AXIS</th>
+          <th>ADD</th>
+          <th>PD</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i=0; i < framePrescription.length; i++) { %>
+          <tr>
+            <td class="service" colspan="6">
+              <%= framePrescription[i].name %>
+            </td>
+          </tr>
+          <tr>
+            <td class="service">Righ (OD)</td>
+            <td>
+              <%= framePrescription[i].spheris_r %>
+            </td>
+            <td>
+              <%= framePrescription[i].cylinder_r %>
+            </td>
+            <td>
+              <%= framePrescription[i].axis_r %>
+            </td>
+            <td>
+              <%= framePrescription[i].addition_r %>
+            </td>
+            <td>
+              <%= framePrescription[i].pupilary_distance %>
+            </td>
+          </tr>
+          <tr>
+            <td class="service">Left (OS)</td>
+            <td >
+              <%= framePrescription[i].spheris_l %>
+            </td>
+            <td >
+              <%= framePrescription[i].cylinder_l %>
+            </td>
+            <td >
+              <%= framePrescription[i].axis_l %>
+            </td>
+            <td >
+              <%= framePrescription[i].addition_l %>
+            </td>
+            <td > <%= framePrescription[i].pupilary_distance %></td>
+          </tr>
+          <% } %>
+      </tbody>
+    </table>
+  </main>
+  <footer>
+    <div id="address">
+      <div class="mb-10"><span class="heading">PT. Artha Persada Kreatif </span></div>
+      <div><span><%= store %> </span></div>
+    </div>
+    <div id="contact" class="clearfix">
+      <div class="mb-10"><span class="heading">Contact Us</span></div>
+      <div>
+        <span>
+          <img class="socil-img" src="https://eyewear-prod.s3-ap-southeast-1.amazonaws.com/assets/pdf_images/wa@2x.png"/> &nbsp; 0817-0104-888
+        </span> 
+        &nbsp;&nbsp;&nbsp;
+        <span> 
+          <img class="socil-img fb-socil-img" src="https://eyewear-prod.s3-ap-southeast-1.amazonaws.com/assets/pdf_images/fb%402x.png"/>&nbsp; Eyewear Lifestyle
+        </span>
+      </div>
+      <div>
+        <span>
+          <img class="socil-img" src="https://eyewear-prod.s3-ap-southeast-1.amazonaws.com/assets/pdf_images/ig@2x.png"/>&nbsp; @Eyewear.Lifestyle
+        </span> 
+        &nbsp;&nbsp;&nbsp;
+        <span>
+          <img class="socil-img" src="https://eyewear-prod.s3-ap-southeast-1.amazonaws.com/assets/pdf_images/tiktok@2x.png"/>&nbsp; Eyewear.Lifestyle
+        </span>
+      </div>
+    </div>
+  </footer>
+  <%- include('partials/footer') %>

@@ -1,0 +1,254 @@
+<%- include('partials/header') %>
+  <div class="header-detail">
+    <div id="logo">
+      <div>
+        <image src="https://eyewear-user.s3-ap-southeast-1.amazonaws.com/email-images/logo.png" />
+      </div>
+    </div>
+    <div id="order">
+      <div class="order-details"><span>Order ID <%= orderid %></span></div>
+    </div>
+    <div style="clear:both"></div>
+  </div>
+  <header class="clearfix">
+    <div id="project">
+      <div class="mb-10"><span class="heading">Customer Details and Shipping Detail</span></div>
+      <div><span><%= name %></span></div>
+      <div><span><%= mobile %></span></div><br>
+      <div><span><%= address %></span></div>
+    </div>
+    <div id="company" class="clearfix">
+      <div class="mb-10"><span class="heading">Purchase Date</span></div>
+      <div><span><%= date %></span></div><br>
+      <div class="mb-10"><span class="heading">Payment Method</span></div>
+      <% if(locals.paymentCategory == '2' ){ %>
+        <div><span> First Payment: <%= splitPaymentDetails[0].paymentMode %></span></div>
+        <div><span>Amount: <%= splitPaymentDetails[0].paymentAmount %></span></div><br>
+        <div><span> Second Payment: <%= splitPaymentDetails[1].paymentMode %></span></div>
+        <div><span>Amount: <%= splitPaymentDetails[1].paymentAmount %></span></div><br>
+      <% } else if(locals.paymentCategory == '1'){ %>
+        <div><span> First Payment: <%= splitPaymentDetails[0].paymentMode %></span></div>
+        <div><span>Amount: <%= splitPaymentDetails[0].paymentAmount %></span></div>
+      <% } else { %>
+        <div><span><%= paymentMode %></span></div>
+        <div><span>Amount: <%= total %></span></div>
+      <% } %>
+    </div>
+  </header>
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th class="desc">No</th>
+          <th class="desc">Item</th>
+          <th class="desc">Price</th>
+          <th class="desc">Qty</th>
+          <th class="desc">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+     
+        <% 
+          for(var i=0; i < orderItems.length; i++) { 
+            if(i == 0){
+        %>
+          <tr>
+            <td class="service" colspan="6">
+              Frames
+            </td>
+          </tr>
+        <% } %> 
+          <tr>
+            <td class="desc">
+              <%= i + 1 %>
+            </td>
+            <td class="desc">
+               <%= orderItems[i].sku %><br>
+               <%= orderItems[i].name %><br>
+               <%= orderItems[i].size %>, 
+               <% if (orderItems[i].category == 0) { %>
+                  Sunglasses
+               <% } else { %>
+                  Eyewear
+               <% } %><br>
+
+               <% if(orderItems[i].is_warranty != '0'){ %>
+                 One Year Warranty ( <%= orderItems[i].warranty_upto %> )<br>
+               <% } %> 
+
+               <% if(orderItems[i].discount_amount != "0") { %>
+                <%= orderItems[i].discount_note %> ( - <%= orderItems[i].discount_amount %> )
+               <% } %> 
+               
+            </td>
+            <td class="desc">
+                <%= orderItems[i].retail_price %>
+            </td>
+            <td class="desc">
+                <%= orderItems[i].quantity %>x
+            </td>
+            <td class="desc">
+                <%= orderItems[i].retail_price %><br><br><br>
+                <% 
+                if(orderItems[i].is_warranty != '0'){  
+                  if(orderItems[i].is_warranty == '1'){
+                %> 
+                  Rp 100.000 <br>
+                <% } else {  %> 
+                 Free <br>
+                <% } }%> 
+
+                <% if(orderItems[i].discount_amount != "0") { %>
+                  <span class="danger">-<%= orderItems[i].discount_amount %> </span>
+                <% } %>
+            </td>
+          </tr>
+          <% 
+            for(var j=0; j < orderItems[i].addon.length; j++) {  
+          %>
+          <tr>
+            <td class="desc">
+              <%= i + 1 %>
+            </td>
+            <td class="desc">
+              <% 
+                if(orderItems[i].addon[j].sku != null){
+              %>
+                <%= orderItems[i].addon[j].sku %><br> 
+              <% } %> 
+              Lens <%= orderItems[i].addon[j].lense_type_name %><br> 
+              <%= orderItems[i].addon[j].prescription_name %><br>
+              <%= orderItems[i].addon[j].filter_type_name %> <br>
+              <% if(orderItems[i].addon[j].discount_amount != "0") { %>
+                 ( - <%= orderItems[i].addon[j].discount_amount %> )
+              <% } %> 
+            </td>
+            <td class="desc">
+              <%= orderItems[i].addon[j].singleItemPrice %>
+            </td>
+            <td class="desc">
+               <%=  orderItems[i].addon[j].quantity %>x
+            </td>
+            <td class="desc">
+              <%= orderItems[i].addon[j].retail_price %><br><br><br>
+              <% if(orderItems[i].addon[j].discount_amount != "0") { %>
+                <span class="danger">-<%= orderItems[i].addon[j].discount_amount %> </span>
+              <% } %> 
+            </td>
+          </tr>
+          <% } }%>
+
+          <% 
+          for(var i=0; i < orderItemEmailAddons.length; i++) {   
+            if(orderItemEmailAddons[i].order_item_id == null){    
+              if( i == 0) {                  
+          %>
+          <tr>
+            <td class="service" colspan="6">
+              Add On
+            </td>
+          </tr>
+          <% } %>
+          <tr>
+            <td class="desc">
+              <%= i + 1 %>
+            </td>
+            <% if(orderItemEmailAddons[i].type != 'clipon'){ %>
+            <td class="desc">
+              <% 
+                if(orderItemEmailAddons[i].sku != null){
+              %>
+              <%= orderItemEmailAddons[i].sku %><br> 
+              <% } %>
+              Lens <%= orderItemEmailAddons[i].lense_type_name %><br> 
+              <%= orderItemEmailAddons[i].prescription_name %><br>
+              <%= orderItemEmailAddons[i].filter_type_name %> <br>
+              <% if(orderItemEmailAddons[i].discount_amount != "0") { %>
+                <%= orderItemEmailAddons[i].discount_note %> ( - <%= orderItemEmailAddons[i].discount_amount %> )
+              <% } %> 
+            </td>
+            <% } else { %>
+              <td class="desc">
+                Clip On  <%= orderItemEmailAddons[i].name %> <br>
+                <%= orderItemEmailAddons[i].size %>
+                <% if(orderItemEmailAddons[i].orderItemEmailAddons != "0") { %>
+                  <%= orderItemEmailAddons[i].discount_note %> ( - <%= orderItemEmailAddons[i].discount_amount %> )
+                <% } %> 
+              </td>
+            <% } %> 
+            <td class="desc">
+              <%= orderItemEmailAddons[i].singleItemPrice %>
+            </td>
+            <td class="desc">
+              <%=  orderItemEmailAddons[i].quantity %>x
+            </td>
+            <td class="desc">
+              <%= orderItemEmailAddons[i].retail_price %><br>
+              <% if(orderItemEmailAddons[i].type != 'clipon'){ %>
+              <br><br>
+              <% }  %>
+
+              <% if(orderItemEmailAddons[i].discount_amount != "0") { %>
+                <span class="danger">-<%= orderItemEmailAddons[i].discount_amount %> </span>
+              <% } %> 
+            </td>
+          </tr>
+          </tr>
+          <% } }  %>
+
+          <tr class="cart-details-row">
+            <td class="desc cart-details" colspan="4">
+                Subtotal<br>
+                Shipping fee<br>
+                <%  if (locals.discountTotal != "0") { %>
+                  <% if (locals.voucher != "NA") { %>
+                    Promotional Code (<%= voucher %>) <br>
+                  <% } else{  %>
+                    Discounted By staff <br>
+                  <% } %>
+                <% } %>
+                <br><b>TOTAL</b>
+            </td>
+            <td class="desc">
+                <%= orderTotal %> <br>
+                Free<br>
+                <% 
+                if(locals.salesChannel == "app") { 
+                  if (locals.discountTotal != "0") { 
+                %>
+                  -<%= discountTotal %><br>
+                <% } } %>
+                <br><b><%= total %></b>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </main>
+  <footer>
+    <div id="address">
+      <div class="mb-10"><span class="heading">PT. Artha Persada Kreatif </span></div>
+      <div><span><%= store %> </span></div>
+    </div>
+    <div id="contact" class="clearfix">
+      <div class="mb-10"><span class="heading">Contact Us</span></div>
+      <div>
+        <span>
+          <img class="socil-img" src="https://eyewear-prod.s3-ap-southeast-1.amazonaws.com/assets/pdf_images/wa@2x.png"/> &nbsp; 0817-0104-888
+        </span> 
+        &nbsp;&nbsp;&nbsp;
+        <span> 
+          <img class="socil-img fb-socil-img" src="https://eyewear-prod.s3-ap-southeast-1.amazonaws.com/assets/pdf_images/fb%402x.png"/>&nbsp; Eyewear Lifestyle
+        </span>
+      </div>
+      <div>
+        <span>
+          <img class="socil-img" src="https://eyewear-prod.s3-ap-southeast-1.amazonaws.com/assets/pdf_images/ig@2x.png"/>&nbsp; @Eyewear.Lifestyle
+        </span> 
+        &nbsp;&nbsp;&nbsp;
+        <span>
+          <img class="socil-img" src="https://eyewear-prod.s3-ap-southeast-1.amazonaws.com/assets/pdf_images/tiktok@2x.png"/>&nbsp; Eyewear.Lifestyle
+        </span>
+      </div>
+    </div>
+  </footer>
+  <%- include('partials/footer') %>
