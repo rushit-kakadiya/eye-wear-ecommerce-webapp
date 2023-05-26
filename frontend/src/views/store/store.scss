@@ -1,0 +1,77 @@
+.cp{
+    cursor: pointer;
+}
+  
+.mt-30{
+  margin-top: 30px;
+}
+.react-datepicker-wrapper {
+    width: 100%;
+    .react-datepicker__input-container {
+        width: inherit;
+      } 
+}
+
+.padding-0{
+  padding: 0px;
+}
+
+.capitalise{
+  text-transform: capitalize;
+}
+
+.summary{
+
+  .summary-section{
+    border: solid 1px rgb(204, 204, 204);
+    padding: 20px 15px;
+    .summary-section-heading{
+      font-size: 19px;
+      font-weight: 900;
+      color: grey;
+      padding: 5px 0px;
+    }
+    .summary-section-describe{
+      padding: 10px 0px;
+      font-size: 19px;
+      font-weight: 900;
+      color: #5e72e4;
+    }
+    .summary-section-item-head{
+      padding: 5px 0px;
+      font-size: 16px;
+      color: #000;
+      font-weight: 900;
+    }
+    .summary-section-item-value{
+      padding: 5px 0px;
+      font-size: 16px;
+      color: #000;
+      text-align: right;
+    }
+    .summary-section-image-uploader{
+      border : solid 1px #eee;
+      margin-bottom: 20px;
+      .summary-section-image-uploader-left{
+        padding: 10px 0px;
+        .help-block{
+          font-size: 11px;
+        }
+      }
+      .summary-section-image-uploader-right{
+        padding: 10px;
+      }
+    }
+  }
+  .summary-graphical-item{
+    padding: 10px;
+    font-size: 19px;
+    font-weight: 900;
+    color: #000;
+  }
+  .summary-graphical-value{
+    padding: 10px;
+    font-size: 22px;
+    color: #000;
+  }
+}

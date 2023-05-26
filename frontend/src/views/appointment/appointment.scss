@@ -1,0 +1,499 @@
+.logo-holder{
+    text-align: center;
+    img{
+        margin-top: 0;
+        width: 212px;
+    }
+}
+.form-heading{
+    text-align: center;
+    h4{
+        margin: 15px 0px;
+        font-size: 32px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.13;
+        letter-spacing: normal;
+        color: #2b2f32;
+        text-transform: uppercase;
+    }
+
+}
+.form-help{
+    text-align: center;
+    margin: 0px 0px 35px 0px;
+    span{
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 0.44px;
+        color: #4a4a4a;
+    }
+
+}
+
+.box-container{
+    padding: 35px 30px;
+    border-radius: 40px;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+
+    .appointment-box{
+        padding: 20px 0px;
+
+
+        .user-info{
+
+
+            p:before,
+            p:after {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                display: block;
+                width: 70px;
+                border-bottom: 5px solid #2b2f32;
+                content: "";
+            }
+
+            h4{
+                margin-top: 35px;
+                font-size: 25px;
+                font-weight: 900;
+                text-transform: uppercase;
+                color:#2b2f32
+            }
+        }
+
+        .section-describe{
+            margin: 30px  10px;
+            font-size: 16px;
+            font-weight: 900;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.5px;
+            color: #2b2f32;
+        }
+        .section-dvider{
+            margin: 35px 0 30px;
+            border: solid 5px #f9f9f9;
+            border-radius: 5px;
+            width: 100%;
+        }
+ 
+        .map-location-box{
+            padding: 15px 10px;
+            border: solid;
+            margin-bottom: 25px;
+            cursor: pointer;
+            border: 1px solid #e9ecef;
+            border-radius: 25px;
+        }
+    }
+    .appointment-box-form{
+        padding: 0px 30px;
+    }
+}
+.form-check{
+    padding: 5px 0;
+}
+.pac-container {
+    z-index: 1051 !important;
+}
+.location-modal{
+    z-index: 20;   
+    .modal-content{
+        border-radius: 25px;
+        .location-map-head{
+            margin: 10px 0;
+            border : 0;
+            h5{
+                margin:0;
+                font-size: 27px;
+                font-weight: 900;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.64;
+                letter-spacing: normal;
+                color: #2b2f32;
+
+            }
+            button{
+                position: absolute;
+                right: 20px;
+                top: 20px;            
+                color: #a50000;
+                border: solid 2px;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                padding: 0;
+                background: #fff;
+                opacity: 1;
+            }
+        }
+
+        .location-map-footer{
+            text-align: center;
+            border: none;
+            display: table-cell;
+        }
+
+        .modal-body{
+            padding : 0;
+
+            .mapAddress{
+                padding: 0 30px;
+                font-stretch: normal;
+                font-style: normal;
+                color: #000;
+                font-size: 0.875rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #525f7f;
+
+
+                text-align: center;
+                div{
+                    padding: 15px 10px;
+                    border: solid 1px #ccc;
+                    border-radius: 0 0 15px 15px;
+                    border-top: none;
+                }
+                input{
+                    padding: 30px 10px;
+                    border: solid 1px #ccc;
+                    border-radius: 15px 15px 0 0;
+                    border-bottom: none;
+                
+                }
+            }
+        }
+    }
+}
+
+.alert-modal{
+    z-index: 20;   
+    .modal-content{
+        border-radius: 25px;
+    }
+    .areaalert-box{
+        padding: 0px;
+        text-align: center;
+        img{
+            width: 80px;
+        }
+        .areaalert-box-head{ 
+            text-align: center;
+            padding: 35px;
+            h4{
+                font-size: 25px;
+                font-weight: 900;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.67;
+                letter-spacing: 0.5px;
+                color: #000;
+            }
+            .seeyou-soon{
+                font-size: 14px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.57;
+                letter-spacing: 0.5px;
+                text-align: center;
+                color: #2a2f32;
+            }
+            .location-avail{
+                text-align: left !important;
+                margin: 25px 0 0 0;
+                div{
+                    padding: 0px;
+                }
+                ul{
+                    margin-bottom: 0;
+                    list-style: none;
+                    li{
+                        font-size: 14px;
+                        font-weight: 600;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: normal;
+                        letter-spacing: 0.58px;
+                        color: #2a2f32;
+                    }
+                    li::before {
+                        content: "\2022";
+                        color: #005198;
+                        font-weight: bold;
+                        display: inline-block; 
+                        width: 1em;
+                        margin-left: -1em;
+                    }
+                }
+            }
+        }
+        .help-instruction{
+            text-align: center;
+            .tanc{
+                span{
+                    margin: 20px 5.5px 5px 2.5px;
+                    font-size: 16px;
+                    font-weight: 900;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: normal;
+                    letter-spacing: 0.5px;
+                    text-align: center;
+                    color: #2a2f32;
+                }
+                p{
+                    margin: 5px 20.5px 12px 17.5px;
+                    padding: 10px 50px;
+                    font-size: 14px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.57;
+                    letter-spacing: 0.5px;
+                    text-align: center;
+                    color: #2a2f32;
+                }
+            }
+            .chat-whtsapp{
+
+                a{
+                    img{
+                        width: 20px;
+                        margin-top: -4px;
+                    }
+                    padding: 11px 15px;
+                    border-radius: 23px;
+                    border: solid 1px #40c152;
+                    background-color: #fff;
+                    font-size: 13px;
+                    font-weight: 900;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: normal;
+                    letter-spacing: 0.5px;
+                    text-align: center;
+                    color: #00954b;
+                }
+
+            }
+            .change-address{
+                margin: 30px 0;
+                a{
+                    text-decoration: underline;
+                    font-size: 14px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: normal;
+                    letter-spacing: 0.58px;
+                    text-align: center;
+                    color: #2a2f32;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+}
+
+.thankyou-container{
+    padding: 0 0 70px;
+    border-radius: 40px;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    .thankyou-box{
+        padding: 0px;
+        .thankyou-box-head{ 
+            text-align: center;
+            padding: 35px;
+            h4{
+                font-size: 25px;
+                font-weight: 900;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.67;
+                letter-spacing: 0.5px;
+                color: #000;
+            }
+            .seeyou-soon{
+                font-size: 18px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: 0.5px;
+                color: #545454;
+                .smile{
+                    width: 27px;
+                }
+            }
+        }
+        .thankyou-box-form{
+            padding: 0px 30px;
+        }
+        .thankyou-banner {
+            width: 100%;
+            border-radius : 40px;
+            // height: 450px;
+        }
+        .app-instruction{
+            text-align: center;
+            .statement{
+                font-size: 18px;
+                margin-bottom: 40px;
+                font-weight: 900;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.5;
+                letter-spacing: 0.5px;
+                text-align: center;
+                color: #2b2f32;
+            }
+            .play-store{
+                text-align: right;
+                img{
+                    width: 200px;
+                }
+            }
+            .app-store{
+                text-align: left;
+                img{
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
+.modal-backdrop{
+    z-index: 10;
+}
+
+
+
+@media only screen and (max-width: 481px) {
+    /* For mobile phones: */
+
+    .logo-holder{
+        img{
+            margin-top: 25px;
+        }
+    }
+    
+    .box-container {
+        border-radius: 0;
+        .thankyou-box img {
+            margin-top: 25px;
+            border-radius: 0;
+        }
+    }
+
+
+    .thankyou-container {
+        border-radius: 0;
+        box-shadow: none;
+        .thankyou-box {
+            img {
+               border-radius: 0 !important;
+            }
+
+            .play-store{
+                img{
+                    width: 150px !important;
+                }
+            }
+            .app-store{
+                img{
+                    width: 150px !important;
+                }
+            }
+        }
+    }
+    .alert-modal .areaalert-box .areaalert-box-head h4{
+        font-size: 20px;
+    }
+    
+}
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+
+    /* your css rules for ipad portrait */
+
+        .logo-holder{
+            img{
+                margin-top: 25px;
+            }
+        }
+        .box-container, .thankyou-container {
+            margin-left: 16.66667% !important;
+            flex: 0 0 66.66667% !important;
+            max-width: 66.66667% !important;
+        }
+        .thankyou-container {
+            .thankyou-box {
+    
+                .play-store{
+                    img{
+                        width: 150px !important;
+                    }
+                }
+                .app-store{
+                    img{
+                        width: 150px !important;
+                    }
+                }
+            }
+        }
+    
+        .alert-modal .areaalert-box .areaalert-box-head h4{
+            font-size: 20px;
+        }
+        
+    }
+@media all and (device-width: 1024px) and (device-height: 768px) and (orientation:landscape) {
+/* your css rules for ipad landscape */
+
+    .logo-holder{
+        img{
+            margin-top: 25px;
+        }
+    }
+    .box-container, .thankyou-container {
+        margin-left: 16.66667% !important;
+        flex: 0 0 66.66667% !important;
+        max-width: 66.66667% !important;
+    }
+
+
+    .thankyou-container {
+        .thankyou-box {
+            .play-store{
+                img{
+                    width: 150px !important;
+                }
+            }
+            .app-store{
+                img{
+                    width: 150px !important;
+                }
+            }
+        }
+    }
+    
+    .alert-modal .areaalert-box .areaalert-box-head h4{
+        font-size: 20px;
+    }
+    
+}
